@@ -1,16 +1,17 @@
 {
-  "title": "Light, fast & responsive",
-  "text": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
+  "title": "Reliable, Eco-Friendly & Hassle-Free",
+  "text": "Dirt Be Gone delivers professional bin cleaning services with speed, care, and environmental responsibility. Our service is designed to be easy to book, effective, and completely contactless.",
   "section": [
     {
-      "title": "Why Antd?",
-      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
-      "icon": "notes.svg"
+      "title": "Why Dirt Be Gone?",
+      "content": "We handle the dirty work for you—removing grime, odours, and bacteria from your wheelie bins so you don't have to. Our regular service keeps your bins fresh and hygienic all year round.",
+      "icon": "bin.svg"
     },
     {
-      "title": "Why styled-components?",
-      "content": "Styled Components gives you total control over your components.",
-      "icon": "notes.svg"
+      "title": "Eco-Friendly Cleaning",
+      "content": "We use biodegradable cleaning products and water-efficient systems to ensure your bins are cleaned safely and sustainably.",
+      "icon": "leaf.svg"
     }
   ]
 }
+

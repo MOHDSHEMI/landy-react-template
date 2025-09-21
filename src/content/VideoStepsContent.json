@@ -1,0 +1,21 @@
+{
+  "title": "How It Works — 3 Simple Steps",
+  "content": "Watch how Dirt Be Gone transforms your bins in just three easy, eco-friendly steps.",
+  "steps": [
+    {
+      "step": "Step 1",
+      "title": "We Arrive On Schedule",
+      "src": "/videos/step1.mov"
+    },
+    {
+      "step": "Step 2",
+      "title": "High-Pressure Bin Cleaning",
+      "src": "/videos/step2.mov"
+    },
+    {
+      "step": "Step 3",
+      "title": "Eco-Friendly Rinse & Done!",
+      "src": "/videos/step3.mov"
+    }
+  ]
+}

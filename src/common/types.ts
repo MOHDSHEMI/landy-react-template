@@ -8,7 +8,9 @@ export interface ButtonProps {
   color?: string;
   name?: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void; 
+  style?: React.CSSProperties;
+  disabled?: boolean;
 }
 
 export interface SvgIconProps {
@@ -23,6 +25,7 @@ export interface InputProps {
   t: TFunction;
   type?: string;
   value?: string;
+  autoSize?: boolean| { minRows: number; maxRows: number };
   onChange: (
     event:
       | React.ChangeEvent<HTMLInputElement>
