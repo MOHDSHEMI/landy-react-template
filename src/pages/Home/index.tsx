@@ -49,11 +49,11 @@ const Home = () => {
         id="mission"
       /> */}
       <GalleryBlock
-  title={BeforeAfterContent.title}
-  content={BeforeAfterContent.content}
-  gallery={BeforeAfterContent.gallery}
-  id="gallery"
-/>
+        title={BeforeAfterContent.title}
+        content={BeforeAfterContent.content}
+        gallery={BeforeAfterContent.gallery}
+        id="gallery"
+      />
       {/* <ContentBlock
         direction="left"
         title={ProductContent.title}
@@ -62,11 +62,11 @@ const Home = () => {
         id="product"
       /> */}
       <StepVideoBlock
-  title={StepVideoContent.title}
-  content={StepVideoContent.content}
-  steps={StepVideoContent.steps}
-/>
-<PricingPage/>
+        title={StepVideoContent.title}
+        content={StepVideoContent.content}
+        steps={StepVideoContent.steps}
+      />
+      <PricingPage />
 
       <Contact
         title={ContactContent.title}

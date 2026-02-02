@@ -1,81 +1,90 @@
 import React from "react";
 import "./PricingPage.css";
+import { Check, Lock, Shield } from "lucide-react";
 
 const PricingPage = () => {
-  // ✅ Smooth scroll function
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+  const handlePayment = () => {
+    // Redirect to GoCardless payment link
+    window.location.href = "https://pay.gocardless.com/BRT00045GN85RSG";
   };
 
   return (
     <div className="pricing-wrapper" id="pricing">
-      {/* Header */}
+      {/* Header Section */}
       <div className="pricing-header">
-        <h1>Bin Cleaning Pricing</h1>
+        <h1>Professional Bin Cleaning Service</h1>
         <p>
-          Affordable and professional bin cleaning services tailored to your
-          needs.
+          Keep your bins fresh, clean, and hygienic every month. Simple pricing, no hidden fees.
         </p>
       </div>
 
-      {/* Pricing Grid */}
-      <div className="pricing-grid">
-        {/* One-Off Cleaning */}
-        <div className="pricing-card styled">
-          <div className="card-header">
-            <h2>One-Off Cleaning</h2>
-            <p className="tagline">Quick & flexible cleaning option</p>
-          </div>
-          <ul>
-            <li>
-              <span>🗑️ 1 Bin</span> <span>£8</span>
-            </li>
-            <li>
-              <span>🗑️ 2 Bins</span> <span>£16</span>
-            </li>
-            <li>
-              <span>🗑️ 3 Bins</span> <span>£18</span>
-            </li>
-            <li>
-              <span>🥡 Food Caddy</span> <span>£2</span>
-            </li>
-          </ul>
-          {/* ✅ Scrolls to Contact form */}
-          <button
-            className="cta-btn"
-            onClick={() => scrollTo("contact")}
-          >
-            Book Now
-          </button>
-        </div>
-
-        {/* Monthly Plan */}
-        <div className="pricing-card highlight">
-          <div className="popular-badge">Popular</div>
+      {/* Single Pricing Card */}
+      <div className="pricing-card-container">
+        <div className="pricing-card">
+          {/* Card Header */}
           <div className="card-header">
             <h2>Monthly Plan</h2>
-            <p className="tagline">Hassle-free freshness every month</p>
+            <p className="tagline">All bins • Unlimited frequency</p>
           </div>
+
+          {/* Price Section */}
           <div className="plan-price">
-            <p className="plan-label">All Bins</p>
-            <p className="plan-amount">£15</p>
+            <div className="price-display">
+              <span className="currency">£</span>
+              <span className="amount">15</span>
+              <span className="period">/month</span>
+            </div>
           </div>
-          <p className="plan-desc">
-            Keep your bins fresh and hygienic with our monthly plan.
-          </p>
-          {/* ✅ Scrolls to Contact form */}
-          <button
-            className="cta-btn light"
-            onClick={() => scrollTo("contact")}
-          >
-            Subscribe
+
+          {/* Features List */}
+          <ul className="features-list">
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Unlimited bins</span>
+            </li>
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Deep cleaning</span>
+            </li>
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Priority support</span>
+            </li>
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Free deodorizing</span>
+            </li>
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Flexible scheduling</span>
+            </li>
+            <li>
+              <Check size={20} className="check-icon" />
+              <span>Eco-friendly products</span>
+            </li>
+          </ul>
+
+          {/* CTA Button */}
+          <button className="cta-btn" onClick={handlePayment}>
+            Pay Now
           </button>
+        </div>
+      </div>
+
+      {/* Trust Section */}
+      <div className="trust-section">
+        <h3>Your Payment is Safe</h3>
+        <div className="trust-grid">
+          <div className="trust-item">
+            <Lock size={28} />
+            <h4>Secure & Encrypted</h4>
+            <p>All payments processed securely. Your card details are protected with industry-standard encryption.</p>
+          </div>
+          <div className="trust-item">
+            <Shield size={28} />
+            <h4>Your Data Protected</h4>
+            <p>GDPR compliant. We never store your card information. Your privacy is our priority.</p>
+          </div>
         </div>
       </div>
     </div>
