@@ -9,14 +9,11 @@ import {
   CircularProgress,
   Checkbox,
   FormControlLabel,
-  FormGroup,
   Radio,
   RadioGroup,
-  FormLabel,
   Stack,
   Divider,
   useMediaQuery,
-  Chip,
   Paper,
 } from "@mui/material";
 import { withTranslation } from "react-i18next";
