@@ -1,20 +1,27 @@
 /* ============================================
-   PRICING PAGE - MOBILE FIRST
+   PRICING PAGE - PREMIUM COMPACT DESIGN
+   Mobile-First Responsive Approach
    ============================================ */
 
 :root {
-  --primary: #166534;
-  --primary-light: #22c55e;
-  --primary-dark: #14532d;
-  --text-dark: #1f2937;
+  --primary: #059669;
+  --primary-light: #10b981;
+  --primary-dark: #047857;
+  --accent-green: #34d399;
+  --accent-bright: #6ee7b7;
+  --accent-gold: #f59e0b;
+  --text-dark: #111827;
+  --text-medium: #374151;
   --text-light: #6b7280;
-  --bg-light: #f9fafb;
+  --bg-light: #f0fdf4;
+  --bg-lighter: #ecfdf5;
   --bg-white: #ffffff;
-  --border: #e5e7eb;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border: #d1fae5;
+  --shadow-sm: 0 2px 8px rgba(5, 150, 105, 0.08);
+  --shadow-md: 0 8px 24px rgba(5, 150, 105, 0.12);
+  --shadow-lg: 0 20px 50px rgba(5, 150, 105, 0.2);
+  --shadow-xl: 0 25px 60px rgba(5, 150, 105, 0.25);
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -23,244 +30,395 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* ============================================
-   WRAPPER
+   WRAPPER - COMPACT MOBILE FIRST
    ============================================ */
 
 .pricing-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--bg-light) 0%, #f3f4f6 100%);
-  padding: 40px 20px;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 50%, #d1fae5 100%);
+  padding: 30px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* ============================================
-   HEADER
-   ============================================ */
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 40px;
-  max-width: 500px;
-  animation: fadeInDown 0.6s ease-out;
-}
-
-.pricing-header h1 {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-}
-
-.pricing-header p {
-  font-size: 0.95rem;
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-/* ============================================
-   PRICING CARD CONTAINER
-   ============================================ */
-
-.pricing-card-container {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 50px;
-  animation: fadeInUp 0.6s ease-out 0.1s both;
-}
-
-/* ============================================
-   PRICING CARD
-   ============================================ */
-
-.pricing-card {
-  background: var(--bg-white);
-  border: 2px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 24px;
   position: relative;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
-.pricing-card:hover {
-  border-color: var(--primary-light);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.pricing-card::before {
+.pricing-wrapper::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
-  border-radius: 16px 16px 0 0;
+  height: 200px;
+  background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 /* ============================================
-   CARD HEADER
+   HEADER - COMPACT & PROFESSIONAL
    ============================================ */
 
-.card-header {
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid var(--border);
+.pricing-header {
+  text-align: center;
+  margin-bottom: 35px;
+  max-width: 700px;
+  animation: fadeInDown 0.7s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
-.card-header h2 {
-  font-size: 1.5rem;
+.pricing-header h1 {
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 6px;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
   letter-spacing: -0.5px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(5, 150, 105, 0.1);
 }
 
-.card-header .tagline {
+.pricing-header p {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--text-medium);
+  line-height: 1.5;
   font-weight: 500;
 }
 
 /* ============================================
-   PRICE DISPLAY
+   PRICING CARDS GRID - COMPACT MOBILE
    ============================================ */
 
-.plan-price {
-  margin: 28px 0;
-  text-align: center;
+.pricing-cards-grid {
+  width: 100%;
+  max-width: 380px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+  margin-bottom: 50px;
+  animation: fadeInUp 0.7s ease-out 0.2s both;
+  position: relative;
+  z-index: 1;
 }
 
-.price-display {
+/* ============================================
+   WHEELIE BIN CARD - PREMIUM COMPACT
+   ============================================ */
+
+.bin-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  animation: fadeInUp 0.7s ease-out both;
+  filter: drop-shadow(0 8px 24px rgba(5, 150, 105, 0.12));
+}
+
+.bin-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.bin-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bin-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.bin-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  filter: drop-shadow(0 16px 40px rgba(5, 150, 105, 0.2));
+}
+
+/* Popular Badge - Premium Look */
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 24px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  z-index: 10;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+/* Bin Lid - Sleek & Premium */
+.bin-lid {
+  width: 88%;
+  max-width: 280px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--primary) 100%);
+  border-radius: 16px 16px 5px 5px;
+  position: relative;
+  box-shadow: 
+    0 3px 10px rgba(5, 150, 105, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Lid handle */
+.bin-lid::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 10px;
+  background: var(--primary-dark);
+  border-radius: 5px;
+  box-shadow: 
+    inset 0 2px 3px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Lid hinge effect */
+.bin-lid::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 0 0 2px 2px;
+}
+
+/* Bin Body - Compact Tapered Shape */
+.bin-body {
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 5px 5px 20px 20px;
+  padding: 3px;
+  position: relative;
+  margin-top: -2px;
+  z-index: 1;
+  box-shadow: 
+    0 12px 32px rgba(5, 150, 105, 0.25),
+    inset 0 2px 6px rgba(255, 255, 255, 0.15);
+  
+  /* Tapered shape */
+  clip-path: polygon(
+    8% 0,
+    92% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* Vertical ridges */
+.bin-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 1.5px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 2px;
+}
+
+.bin-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 15%;
+  width: 1.5px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.04) 100%);
+  border-radius: 2px;
+}
+
+/* Bin Content - Compact & Premium */
+.bin-content {
+  background: linear-gradient(180deg, #ffffff 0%, #fefefe 100%);
+  border-radius: 3px 3px 18px 18px;
+  padding: 28px 20px;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Featured Card Enhancement */
+.bin-card.featured .bin-lid {
+  background: linear-gradient(180deg, var(--accent-bright) 0%, var(--accent-green) 100%);
+  box-shadow: 
+    0 4px 16px rgba(52, 211, 153, 0.4),
+    inset 0 2px 3px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.bin-card.featured .bin-body {
+  background: linear-gradient(180deg, var(--accent-green) 0%, var(--primary) 100%);
+  box-shadow: 
+    0 16px 48px rgba(16, 185, 129, 0.35),
+    inset 0 2px 6px rgba(255, 255, 255, 0.2);
+}
+
+.bin-card.featured:hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: drop-shadow(0 20px 50px rgba(16, 185, 129, 0.3));
+}
+
+/* ============================================
+   BIN CONTENT ELEMENTS - COMPACT
+   ============================================ */
+
+.bin-quantity {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.bin-frequency {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.bin-price {
   display: flex;
   justify-content: center;
   align-items: baseline;
+  margin: 18px 0 24px;
   gap: 4px;
 }
 
-.currency {
-  font-size: 1.4rem;
-  font-weight: 700;
+.price-symbol {
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--primary);
+  margin-bottom: 3px;
 }
 
-.amount {
+.price-amount {
   font-size: 3.5rem;
   font-weight: 900;
   color: var(--text-dark);
-  line-height: 1;
-}
-
-.period {
-  font-size: 1rem;
-  color: var(--text-light);
-  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -1.5px;
 }
 
 /* ============================================
-   FEATURES LIST
+   BIN CTA BUTTON - PREMIUM
    ============================================ */
 
-.features-list {
-  list-style: none;
-  margin: 28px 0;
-  padding: 0;
-  flex-grow: 1;
-}
-
-.features-list li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 14px 0;
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--border);
-  transition: transform 0.2s ease;
-}
-
-.features-list li:last-child {
-  border-bottom: none;
-}
-
-.features-list li:hover {
-  transform: translateX(4px);
-}
-
-.check-icon {
-  flex-shrink: 0;
-  color: var(--primary-light);
-  margin-top: 2px;
-}
-
-/* ============================================
-   CTA BUTTON
-   ============================================ */
-
-.cta-btn {
-  padding: 16px 24px;
+.bin-cta-btn {
+  width: 100%;
+  padding: 14px 28px;
   border-radius: 12px;
   border: none;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: var(--transition);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 24px;
-  position: relative;
-  overflow: hidden;
+  letter-spacing: 0.8px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white;
-  box-shadow: var(--shadow-md);
+  box-shadow: 
+    0 6px 20px rgba(5, 150, 105, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.cta-btn:hover {
-  box-shadow: var(--shadow-lg);
+.bin-cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.bin-cta-btn:hover {
+  box-shadow: 
+    0 10px 30px rgba(5, 150, 105, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
-.cta-btn:active {
-  transform: translateY(0);
+.bin-cta-btn:hover::before {
+  width: 350px;
+  height: 350px;
+}
+
+.bin-cta-btn:active {
+  transform: translateY(-1px);
 }
 
 /* ============================================
-   TRUST SECTION
+   TRUST SECTION - COMPACT
    ============================================ */
 
 .trust-section {
   width: 100%;
-  max-width: 500px;
-  animation: fadeInUp 0.6s ease-out 0.2s both;
+  max-width: 900px;
+  animation: fadeInUp 0.7s ease-out 0.5s both;
+  position: relative;
+  z-index: 1;
 }
 
 .trust-section h3 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary-dark);
   text-align: center;
   margin-bottom: 30px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 
 .trust-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 18px;
 }
 
 .trust-item {
   background: var(--bg-white);
-  padding: 24px;
-  border-radius: 12px;
+  padding: 24px 20px;
+  border-radius: 16px;
   border: 2px solid var(--border);
   text-align: center;
   transition: var(--transition);
@@ -268,27 +426,30 @@
 }
 
 .trust-item:hover {
-  border-color: var(--primary-light);
+  border-color: var(--accent-green);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
 }
 
 .trust-item svg {
   color: var(--primary-light);
-  margin: 0 auto 16px;
+  margin: 0 auto 12px;
 }
 
 .trust-item h4 {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-dark);
   margin-bottom: 8px;
+  letter-spacing: -0.2px;
 }
 
 .trust-item p {
   font-size: 0.85rem;
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -318,105 +479,248 @@
 }
 
 /* ============================================
-   TABLET & DESKTOP
+   TABLET - 640px+
    ============================================ */
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .pricing-wrapper {
-    padding: 60px 40px;
+    padding: 45px 24px;
   }
 
   .pricing-header {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 
   .pricing-header h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 12px;
   }
 
   .pricing-header p {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
-  .pricing-card-container {
-    margin-bottom: 60px;
+  .pricing-cards-grid {
+    max-width: 400px;
+    gap: 45px;
   }
 
-  .pricing-card {
-    padding: 40px 32px;
+  .bin-content {
+    padding: 32px 24px;
+    min-height: 300px;
   }
 
-  .card-header h2 {
-    font-size: 1.8rem;
+  .bin-quantity {
+    font-size: 1.5rem;
   }
 
-  .amount {
+  .bin-frequency {
+    font-size: 0.85rem;
+  }
+
+  .price-amount {
     font-size: 4rem;
   }
 
-  .features-list li {
-    padding: 16px 0;
-    font-size: 1rem;
+  .bin-cta-btn {
+    padding: 15px 30px;
+    font-size: 0.95rem;
   }
 
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .trust-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+    gap: 22px;
   }
 
   .trust-item {
-    padding: 28px;
+    padding: 28px 24px;
+  }
+
+  .trust-item h4 {
+    font-size: 1.05rem;
+  }
+
+  .trust-item p {
+    font-size: 0.9rem;
   }
 }
 
 /* ============================================
-   MOBILE SMALL
+   DESKTOP - 1024px+
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .pricing-wrapper {
+    padding: 65px 32px;
+  }
+
+  .pricing-header {
+    margin-bottom: 60px;
+  }
+
+  .pricing-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+  }
+
+  .pricing-header p {
+    font-size: 1.08rem;
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+  }
+
+  .bin-card.featured {
+    transform: scale(1.06);
+  }
+
+  .bin-card.featured:hover {
+    transform: scale(1.09) translateY(-8px);
+  }
+
+  .bin-content {
+    padding: 36px 26px;
+    min-height: 320px;
+  }
+
+  .bin-quantity {
+    font-size: 1.6rem;
+  }
+
+  .bin-frequency {
+    font-size: 0.9rem;
+  }
+
+  .price-amount {
+    font-size: 4.5rem;
+  }
+
+  .bin-cta-btn {
+    font-size: 1rem;
+    padding: 16px 32px;
+  }
+
+  .trust-section h3 {
+    font-size: 1.9rem;
+    margin-bottom: 40px;
+  }
+
+  .trust-item {
+    padding: 32px 28px;
+  }
+
+  .trust-item h4 {
+    font-size: 1.15rem;
+  }
+
+  .trust-item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP - 1280px+
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .pricing-header h1 {
+    font-size: 2.6rem;
+  }
+
+  .pricing-header p {
+    font-size: 1.12rem;
+  }
+
+  .pricing-cards-grid {
+    gap: 50px;
+    max-width: 1280px;
+  }
+
+  .bin-content {
+    min-height: 340px;
+  }
+
+  .price-amount {
+    font-size: 5rem;
+  }
+
+  .trust-section h3 {
+    font-size: 2.1rem;
+  }
+}
+
+/* ============================================
+   MOBILE SMALL - 360px and below
    ============================================ */
 
 @media (max-width: 360px) {
+  .pricing-wrapper {
+    padding: 25px 14px;
+  }
+
+  .pricing-header {
+    margin-bottom: 28px;
+  }
+
   .pricing-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .pricing-header p {
     font-size: 0.85rem;
   }
 
-  .pricing-card {
-    padding: 24px 16px;
+  .pricing-cards-grid {
+    gap: 28px;
+    max-width: 340px;
   }
 
-  .card-header h2 {
+  .popular-badge {
+    font-size: 0.65rem;
+    padding: 6px 20px;
+  }
+
+  .bin-content {
+    padding: 24px 18px;
+    min-height: 260px;
+  }
+
+  .bin-quantity {
+    font-size: 1.2rem;
+  }
+
+  .bin-frequency {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+  }
+
+  .price-symbol {
+    font-size: 1.4rem;
+  }
+
+  .price-amount {
+    font-size: 3rem;
+  }
+
+  .bin-cta-btn {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
+
+  .trust-section h3 {
     font-size: 1.3rem;
+    margin-bottom: 24px;
   }
 
-  .amount {
-    font-size: 2.8rem;
-  }
-
-  .features-list li {
-    padding: 12px 0;
-    font-size: 0.9rem;
-    gap: 10px;
-  }
-
-  .check-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .cta-btn {
-    padding: 14px 20px;
-    font-size: 0.95rem;
+  .trust-grid {
+    gap: 16px;
   }
 
   .trust-item {
-    padding: 20px;
+    padding: 20px 18px;
   }
 
   .trust-item h4 {
@@ -433,20 +737,33 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
-/* Focus states for keyboard navigation */
-.cta-btn:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 2px;
+/* Focus states for accessibility */
+.bin-cta-btn:focus-visible {
+  outline: 4px solid var(--accent-green);
+  outline-offset: 3px;
 }
 
 .trust-item:focus-visible {
-  outline: 3px solid var(--primary);
+  outline: 3px solid var(--accent-green);
   outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bin-card {
+    border: 2px solid var(--primary);
+  }
+  
+  .popular-badge {
+    border: 2px solid white;
+  }
 }

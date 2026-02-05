@@ -1,6 +1,6 @@
 import React from "react";
 import "./PricingPage.css";
-import { Check, Lock, Shield } from "lucide-react";
+import { Lock, Shield } from "lucide-react";
 
 const PricingPage = () => {
   const handlePayment = () => {
@@ -18,56 +18,61 @@ const PricingPage = () => {
         </p>
       </div>
 
-      {/* Single Pricing Card */}
-      <div className="pricing-card-container">
-        <div className="pricing-card">
-          {/* Card Header */}
-          <div className="card-header">
-            <h2>Monthly Plan</h2>
-            <p className="tagline">All bins • Unlimited frequency</p>
-          </div>
-
-          {/* Price Section */}
-          <div className="plan-price">
-            <div className="price-display">
-              <span className="currency">£</span>
-              <span className="amount">15</span>
-              <span className="period">/month</span>
+      {/* Three Wheelie Bin Pricing Cards */}
+      <div className="pricing-cards-grid">
+        {/* Card 1: Single Bin */}
+        <div className="bin-card">
+          <div className="bin-lid"></div>
+          <div className="bin-body">
+            <div className="bin-content">
+              <div className="bin-quantity">1x Wheelie Bin</div>
+              <div className="bin-frequency">Washed once every 4 weeks</div>
+              <div className="bin-price">
+                <span className="price-symbol">£</span>
+                <span className="price-amount">8</span>
+              </div>
+              <button className="bin-cta-btn" onClick={handlePayment}>
+                Pay Direct Debit
+              </button>
             </div>
           </div>
+        </div>
 
-          {/* Features List */}
-          <ul className="features-list">
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Unlimited bins</span>
-            </li>
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Deep cleaning</span>
-            </li>
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Priority support</span>
-            </li>
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Free deodorizing</span>
-            </li>
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Flexible scheduling</span>
-            </li>
-            <li>
-              <Check size={20} className="check-icon" />
-              <span>Eco-friendly products</span>
-            </li>
-          </ul>
+        {/* Card 2: Two Bins */}
+        <div className="bin-card">
+          <div className="bin-lid"></div>
+          <div className="bin-body">
+            <div className="bin-content">
+              <div className="bin-quantity">2x Wheelie Bins</div>
+              <div className="bin-frequency">Washed once every 4 weeks</div>
+              <div className="bin-price">
+                <span className="price-symbol">£</span>
+                <span className="price-amount">12</span>
+              </div>
+              <button className="bin-cta-btn" onClick={handlePayment}>
+                Pay Direct Debit
+              </button>
+            </div>
+          </div>
+        </div>
 
-          {/* CTA Button */}
-          <button className="cta-btn" onClick={handlePayment}>
-            Pay Now
-          </button>
+        {/* Card 3: Three or More Bins - MOST POPULAR */}
+        <div className="bin-card featured">
+          <div className="popular-badge">Most Popular</div>
+          <div className="bin-lid"></div>
+          <div className="bin-body">
+            <div className="bin-content">
+              <div className="bin-quantity">3x or More Wheelie Bins</div>
+              <div className="bin-frequency">Washed once every 4 weeks</div>
+              <div className="bin-price">
+                <span className="price-symbol">£</span>
+                <span className="price-amount">15</span>
+              </div>
+              <button className="bin-cta-btn" onClick={handlePayment}>
+                Pay Direct Debit
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
