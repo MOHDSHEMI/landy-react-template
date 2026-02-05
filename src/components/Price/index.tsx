@@ -16,7 +16,45 @@ const PricingPage = () => {
         <p>
           Keep your bins fresh, clean, and hygienic every month. Simple pricing, no hidden fees.
         </p>
+        <div
+          style={{
+            marginTop: '24px',
+            padding: '12px 14px',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            borderRadius: '12px',
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'center',
+            maxWidth: '680px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            boxShadow: '0 4px 12px rgba(102, 126, 234, 0.15)',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '16px',
+              lineHeight: '1',
+            }}
+          >
+            🔒
+          </span>
+          <p
+            style={{
+              fontSize: '13px',
+              color: '#ffffff',
+              margin: 0,
+              lineHeight: '1.4',
+              fontWeight: '500',
+            }}
+          >
+            Just complete your details below before payment, and you're all set! Your privacy matters to us—your information stays secure and is used only for this booking.
+          </p>
+        </div>
+
+
       </div>
+
 
       {/* Three Wheelie Bin Pricing Cards */}
       <div className="pricing-cards-grid">
