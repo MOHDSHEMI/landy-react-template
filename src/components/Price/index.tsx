@@ -5,7 +5,7 @@ import { Lock, Shield } from "lucide-react";
 const PricingPage = () => {
   const handlePayment = () => {
     // Redirect to GoCardless payment link
-    window.location.href = "https://pay.gocardless.com/BRT00045GN85RSG";
+    window.location.href = "https://sqgee.com/u/orwyy";
   };
 
   return (
